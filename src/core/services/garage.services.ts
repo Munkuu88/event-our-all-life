@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { CreateGarageDto } from '../dtos/garage.dto';
 import { Model } from 'mongoose';
+import { CreateGarageDto } from '../dtos/garage.dto';
 import { Garage, GarageDocument } from '../schemas/garage.schema';
 
 @Injectable()
