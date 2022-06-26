@@ -15,8 +15,17 @@ export class UserService {
 
   async loginUser(user: CreateUserDto): Promise<User> {
     const email = user.email;
-
     const _user = await this.userModel.findOne({ email });
-    return _user;
+
+    if (!user) {
+      throw new BadRequestException('invalid credentials');
+    }
+
+    if (!(await bcrypt.compare(_user.password, user.password))) {
+      throw new BadRequestException('invalid credentials');
+    }
+
+    return _user._id;
+    //yaaj id gaa convert token
   }
 }
