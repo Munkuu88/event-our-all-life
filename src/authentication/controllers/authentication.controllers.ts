@@ -1,5 +1,4 @@
 import { Body, Controller, Post, Res } from '@nestjs/common';
-import { JwtService } from '@nestjs/jwt';
 import { UserService } from '../services/authentication.services';
 import { CreateUserDto } from '../dtos/authentication.dtos';
 
